@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELLOWORLD</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .helloworld {
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            letter-spacing: 3px;
+            animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                             0 0 30px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                             0 0 60px rgba(102, 126, 234, 0.8),
+                             0 0 90px rgba(118, 75, 162, 0.6);
+            }
+        }
+
+        .subtitle {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            animation: fadeInOut 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Character animation */
+        .char {
+            display: inline-block;
+            animation: charBounce 0.6s ease-in-out infinite;
+        }
+
+        .char:nth-child(1) { animation-delay: 0s; }
+        .char:nth-child(2) { animation-delay: 0.1s; }
+        .char:nth-child(3) { animation-delay: 0.2s; }
+        .char:nth-child(4) { animation-delay: 0.3s; }
+        .char:nth-child(5) { animation-delay: 0.4s; }
+        .char:nth-child(6) { animation-delay: 0.5s; }
+        .char:nth-child(7) { animation-delay: 0.6s; }
+        .char:nth-child(8) { animation-delay: 0.7s; }
+        .char:nth-child(9) { animation-delay: 0.8s; }
+        .char:nth-child(10) { animation-delay: 0.9s; }
+
+        @keyframes charBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="helloworld">
+            <span class="char">H</span><span class="char">E</span><span class="char">L</span><span class="char">L</span><span class="char">O</span><span class="char">W</span><span class="char">O</span><span class="char">R</span><span class="char">L</span><span class="char">D</span>
+        </div>
+        <div class="subtitle">Welcome to the web!</div>
+    </div>
+</body>
+</html>
