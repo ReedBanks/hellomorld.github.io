@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Luminous Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">LUMINOUS</a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Gallery Hero -->
+        <section class="hero" style="height: 50vh;">
+            <div class="hero-content">
+                <h1>Our Portfolio</h1>
+                <p class="subtitle">Moments beautifully captured</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section>
+            <div class="container">
+                <h2>Featured Work</h2>
+
+                <!-- Filter Buttons -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all" onclick="filterGallery('all')">All</button>
+                    <button class="filter-btn" data-filter="weddings" onclick="filterGallery('weddings')">Weddings</button>
+                    <button class="filter-btn" data-filter="events" onclick="filterGallery('events')">Events</button>
+                    <button class="filter-btn" data-filter="portraits" onclick="filterGallery('portraits')">Portraits</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- Wedding Photos -->
+                    <div class="gallery-item" data-category="weddings">
+                        <div class="placeholder">📸</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Sarah & Michael's Wedding</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="weddings">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">📸</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">The Big Day</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="weddings">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">📸</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Ceremony Moments</div>
+                        </div>
+                    </div>
+
+                    <!-- Event Photos -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🎉</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Corporate Gala 2024</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="events">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🎉</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Summer Festival</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="events">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">🎉</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Product Launch Event</div>
+                        </div>
+                    </div>
+
+                    <!-- Portrait Photos -->
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">💍</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Engagement Session</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">💍</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Couple's Portrait</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="placeholder" style="background: linear-gradient(135deg, #2e2e78 0%, #662d91 100%);">💍</div>
+                        <div class="gallery-overlay">
+                            <div class="overlay-text">Family Portraits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; text-align: center;">
+            <div class="container">
+                <h2 style="color: white;">Love What You See?</h2>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 2rem;">
+                    Let's book a consultation and discuss your photography needs.
+                </p>
+                <a href="contact.html" class="cta-button">Get In Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Luminous Studio. All rights reserved. | <a href="contact.html">Contact</a> | <a href="gallery.html">Portfolio</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

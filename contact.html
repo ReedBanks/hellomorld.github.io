@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Luminous Studio</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-block {
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .info-block h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-block p {
+            color: var(--light-text);
+        }
+
+        .info-block a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-block a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">LUMINOUS</a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Contact Hero -->
+        <section class="hero" style="height: 50vh;">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p class="subtitle">We'd love to hear from you</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-container">
+                    <!-- Contact Form -->
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+                                <option>Select a service...</option>
+                                <option>Wedding Photography</option>
+                                <option>Event Coverage</option>
+                                <option>Portrait Sessions</option>
+                                <option>Video & Highlights</option>
+                                <option>Custom Package</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <h3>📧 Email</h3>
+                            <p><a href="mailto:hello@luminousstudio.com">hello@luminousstudio.com</a></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">We typically respond within 24 hours</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>📞 Phone</h3>
+                            <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Mon-Fri, 9am - 6pm EST</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>📍 Location</h3>
+                            <p>123 Creative Street<br>Photography Studio<br>New York, NY 10001</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Follow Us</h3>
+                            <p style="margin-bottom: 1rem;">Connect with us on social media</p>
+                            <div class="social-links">
+                                <a href="#" title="Instagram" style="font-size: 1.2rem;">f</a>
+                                <a href="#" title="Instagram" style="font-size: 1.2rem;">📷</a>
+                                <a href="#" title="LinkedIn" style="font-size: 1rem;">in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; text-align: center;">
+            <div class="container">
+                <h2 style="color: white;">Available for Bookings</h2>
+                <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 2rem;">
+                    We have limited availability for 2024. Secure your date early!
+                </p>
+                <a href="#" onclick="document.getElementById('name').focus()" class="cta-button">Book Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Luminous Studio. All rights reserved. | <a href="contact.html">Contact</a> | <a href="gallery.html">Portfolio</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this to a backend
+            console.log('Form submitted:', { name, email, phone, service, message });
+            
+            alert(`Thank you, ${name}! We've received your message and will be in touch within 24 hours.`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
