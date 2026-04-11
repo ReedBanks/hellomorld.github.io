@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Reed Banks</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script src="emailjs.min.js"></script>
     <style>
         .contact-container {
             display: grid;
@@ -197,7 +197,7 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
 
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="button" class="submit-btn" onclick="handleSubmit(event)">Send Message</button>
                     </form>
 
                     <!-- Contact Info -->
@@ -252,19 +252,24 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Initialize EmailJS when ready
+        // Define emailjsReady flag globally
         let emailjsReady = false;
-        
+
+        // Ensure EmailJS initialization is robust
         function checkAndInitEmailJS() {
             if (typeof emailjs !== 'undefined' && !emailjsReady) {
-                emailjs.init('Lzqd1js9X6dBB-gX9');
-                emailjsReady = true;
-                console.log('EmailJS initialized successfully');
+                try {
+                    emailjs.init('Lzqd1js9X6dBB-gX9');
+                    emailjsReady = true;
+                    console.log('EmailJS initialized successfully');
+                } catch (error) {
+                    console.error('Failed to initialize EmailJS:', error);
+                }
             } else if (typeof emailjs === 'undefined') {
-                setTimeout(checkAndInitEmailJS, 50);
+                setTimeout(checkAndInitEmailJS, 100);
             }
         }
-        
+
         // Start checking when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', checkAndInitEmailJS);
