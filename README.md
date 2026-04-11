@@ -1,21 +1,21 @@
-# Photography Studio Website
+# Reed Banks - Freelance Portfolio
 
-A modern, responsive website for a professional photography studio specializing in weddings, events, and portrait photography.
+A modern, responsive portfolio website for freelance creative professional specializing in video editing, photography, and IT solutions.
 
 ## Features
 
 - **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Gallery** - Filterable portfolio gallery showcasing different photography categories
-- **Services** - Detailed information about photography services and pricing packages
+- **Gallery** - Filterable portfolio gallery showcasing video, photography, and IT projects
+- **Services** - Detailed information about video editing, photography, web development, and IT services
 - **Contact** - Easy-to-use contact form for inquiries
 - **Smooth Animations** - Modern UI with fade-in effects and smooth transitions
 
 ## Pages
 
-- **Home** (index.html) - Hero section with featured services and about the studio
-- **Gallery** (gallery.html) - Portfolio with sortable photography categories (Weddings, Events, Portraits)
-- **Services** (services.html) - Service offerings, pricing packages, and packages breakdown
-- **Contact** (contact.html) - Contact form and studio information
+- **Home** (index.html) - Hero section with featured services and about Reed Banks
+- **Gallery** (gallery.html) - Portfolio with sortable project categories (Video Projects, Photography, Web & IT)
+- **Services** (services.html) - Service offerings including video editing, photography, web development, and IT support
+- **Contact** (contact.html) - Contact form for project inquiries
 
 ## File Structure
 
@@ -34,7 +34,7 @@ A modern, responsive website for a professional photography studio specializing 
 
 ## Deployment
 
-This site is hosted on GitHub Pages. Visit [https://yourusername.github.io](https://yourusername.github.io) to view the live site.
+This site is hosted on GitHub Pages. Visit the live portfolio to view Reed Banks' work and services.
 
 ## Technologies Used
 
