@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Reed Banks</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <style>
         .contact-container {
             display: grid;
@@ -250,13 +251,36 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
     <script>
-        // Initialize EmailJS
-        emailjs.init('Lzqd1js9X6dBB-gX9'); // Replace with your EmailJS public key
+        // Initialize EmailJS when ready
+        let emailjsReady = false;
+        
+        function checkAndInitEmailJS() {
+            if (typeof emailjs !== 'undefined' && !emailjsReady) {
+                emailjs.init('Lzqd1js9X6dBB-gX9');
+                emailjsReady = true;
+                console.log('EmailJS initialized successfully');
+            } else if (typeof emailjs === 'undefined') {
+                setTimeout(checkAndInitEmailJS, 50);
+            }
+        }
+        
+        // Start checking when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkAndInitEmailJS);
+        } else {
+            checkAndInitEmailJS();
+        }
 
         function handleSubmit(event) {
             event.preventDefault();
+            
+            // Check if emailjs is initialized
+            if (!emailjsReady || typeof emailjs === 'undefined') {
+                alert('Email service is initializing. Please wait a moment and try again.');
+                checkAndInitEmailJS();
+                return;
+            }
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
