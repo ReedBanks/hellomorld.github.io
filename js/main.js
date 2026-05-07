@@ -79,3 +79,55 @@ function filterGallery(category) {
         }
     });
 }
+
+// Carousel functionality
+function initCarousel() {
+    const carousel = document.querySelector('.projects-carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    let currentPosition = 0;
+    const itemWidth = projectItems[0].offsetWidth;
+    const gap = 32; // 2rem = 32px
+    const itemTotalWidth = itemWidth + gap;
+    const containerWidth = carousel.parentElement.offsetWidth;
+    const itemsPerView = Math.floor(containerWidth / itemTotalWidth);
+    const maxScroll = Math.max(0, (projectItems.length - itemsPerView) * itemTotalWidth);
+    
+    function updateCarousel() {
+        currentPosition = Math.max(0, Math.min(currentPosition, maxScroll));
+        carousel.style.transform = `translateX(-${currentPosition}px)`;
+    }
+    
+    prevBtn.addEventListener('click', () => {
+        currentPosition = Math.max(0, currentPosition - itemTotalWidth);
+        updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        currentPosition = Math.min(currentPosition + itemTotalWidth, maxScroll);
+        updateCarousel();
+    });
+    
+    // Initialize
+    updateCarousel();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newContainerWidth = carousel.parentElement.offsetWidth;
+        const newItemsPerView = Math.floor(newContainerWidth / itemTotalWidth);
+        const newMaxScroll = Math.max(0, (projectItems.length - newItemsPerView) * itemTotalWidth);
+        currentPosition = Math.min(currentPosition, newMaxScroll);
+        updateCarousel();
+    });
+}
+
+// Initialize carousel when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+    initCarousel();
+}
