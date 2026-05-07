@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .invoice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .invoice-header h1 {
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        .invoice-details, .invoice-items {
+            margin-bottom: 2rem;
+        }
+
+        .invoice-details p {
+            margin: 0.5rem 0;
+        }
+
+        .invoice-items table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-items th, .invoice-items td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .invoice-items th {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .invoice-total {
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <h1>Invoice</h1>
+            <p>Invoice #: 001</p>
+            <p>Date: May 7, 2026</p>
+        </div>
+
+        <div class="invoice-details">
+            <p><strong>Billed To:</strong> John Doe</p>
+            <p><strong>Address:</strong> 123 Main Street, Springfield</p>
+            <p><strong>Email:</strong> john.doe@example.com</p>
+        </div>
+
+        <div class="invoice-items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Video Editing Service</td>
+                        <td>1</td>
+                        <td>$200.00</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>Photography Session</td>
+                        <td>2</td>
+                        <td>$150.00</td>
+                        <td>$300.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="invoice-total">
+            <p>Total: $500.00</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -197,7 +197,7 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
 
-                        <button type="button" class="submit-btn" onclick="handleSubmit(event)">Send Message</button>
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </form>
 
                     <!-- Contact Info -->
@@ -227,6 +227,12 @@
                                 <a href="#" title="Instagram" style="font-size: 1.2rem;">📷</a>
                                 <a href="#" title="LinkedIn" style="font-size: 1rem;">in</a>
                             </div>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>🧾 Invoices</h3>
+                            <p><a href="assets/premade-invoices/" target="_blank">View Premade Invoices</a></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Personalized invoices can be created upon request. Contact me for more details.</p>
                         </div>
                     </div>
                 </div>
@@ -306,13 +312,13 @@
             // Send email using EmailJS
             emailjs.send('service_doa022r', 'template_4cdedmi', templateParams)
                 .then((response) => {
-                    alert(`Thank you, ${name}! We've received your message and will be in touch within 24 hours.`);
-                    event.target.reset();
                     console.log('Email sent successfully!', response);
+                    alert(`Thank you, ${name}! We've received your message and will be in touch within 24 hours.`);
+                    event.target.reset(); // Reset the form only after success
                 })
                 .catch((error) => {
+                    console.error('Error sending email:', error);
                     alert('Sorry, there was an issue sending your message. Please try again.');
-                    console.error('Email sending failed:', error);
                 });
         }
     </script>
